@@ -1,0 +1,36 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <button class="close-button" (click)="closeRegModal()">&#10006;</button>
+    <header class="ms-3">
+      <h2>Sign up</h2>
+    </header>
+    <hr />
+    <form>
+      <div class="inputs">
+        <div class="form-group">
+          <label  for="username">Username:</label>
+          <input  [(ngModel)]="userName" 
+          type="username" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input [(ngModel)]="email" 
+          type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input [(ngModel)]="password" 
+           type="password" id="password" name="password" required />
+        </div>
+      </div>
+      <hr />
+
+      <div class="button-container pe-3 ">
+        <button (click)="closeRegModal()" type="button" class="btn btn-secondary mx-2">Close</button>
+        <button (click)="addUser()" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+

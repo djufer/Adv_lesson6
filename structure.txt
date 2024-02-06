@@ -1,0 +1,41 @@
+app/
+    components/
+        header
+    pages/
+        main
+    modals
+        
+    shared/
+        styles/
+            _variables.scss
+            _mixins.scss
+            _base.scss
+        interfaces/
+        pipes/
+        guards/
+        directives/
+        services/
+
+
+
+        app
+├── components
+│   ├── header
+│   ├── sidebar
+│   └── ...
+├── modals
+│   ├── login-modal
+│   │   ├── login-modal.component.ts
+│   │   ├── login-modal.component.html
+│   │   └── login-modal.component.css
+│   ├── register-modal
+│   │   ├── register-modal.component.ts
+│   │   ├── register-modal.component.html
+│   │   └── register-modal.component.css
+│   └── ...
+├── pages
+│   ├── home
+│   ├── about
+│   └── ...
+└── ...
+        
