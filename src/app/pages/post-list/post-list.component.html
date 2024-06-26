@@ -1,5 +1,5 @@
 <div
-  *ngFor="let blog of blogs"
+  *ngFor="let blog of blogs; index as i"
   class="container d-flex flex-column align-items-center"
 >
   <div class="one-block m-1 p-3">
@@ -20,8 +20,8 @@
     </div>
     <p class="post-text lh-1"> {{ blog.message }} </p>
     <div class="buttons-block text-end">
-      <button (click)="editPost(blog)" type="button" class="btn btn-warning me-2">Edit</button>
-      <button (click)="delPost(blog)" type="button" class="btn btn-danger">Delete</button>
+      <button (click)="editPost(i)" type="button" class="btn btn-warning me-2">Edit</button>
+      <button (click)="delPost(i)" type="button" class="btn btn-danger">Delete</button>
     </div>
   </div>
 </div>

@@ -17,52 +17,43 @@ export class PostListComponent {
     this.blogs = this.blogDataService.blogs;
   }
 
-  delPost(myBlog: Blog) {
+  delPost(index: number) {
     let currentLoginedUserIndex = this.blogDataService.currentLoginedUserIndex;
     let currentLoginedUserName =
       this.blogDataService.users[currentLoginedUserIndex].username;
     if (
-      currentLoginedUserName === myBlog.postedBy ||
+      currentLoginedUserName === this.blogDataService.blogs[index].postedBy ||
       currentLoginedUserIndex === 0
     ) {
-      console.log('yeeeees');
-      // =========================
-      let indexToRemove = this.blogDataService.blogs.findIndex(
-        (blog) => blog === myBlog
-      );
-      console.log(indexToRemove);
-
-      // =========================
-
       if (
-        indexToRemove >= 0 &&
-        indexToRemove < this.blogDataService.blogs.length
+        index >= 0 &&
+        index < this.blogDataService.blogs.length
       ) {
-        this.blogDataService.blogs.splice(indexToRemove, 1);
+        this.blogDataService.blogs.splice(index, 1);
       }
     } else {
       alert('Ви не маєте доступу до видалення цього поста');
     }
   }
-  editPost(myBlog: Blog) {
+  editPost(index: number) {
     let currentLoginedUserIndex = this.blogDataService.currentLoginedUserIndex;
     let currentLoginedUserName =
       this.blogDataService.users[currentLoginedUserIndex].username;
     if (
-      currentLoginedUserName === myBlog.postedBy ||
+      currentLoginedUserName === this.blogDataService.blogs[index].postedBy ||
       currentLoginedUserIndex === 0
     ) {
       // у модалці post змінити кнопку post на edit
       this.modalsService.updateEditStatus(true);
-      
-      
+
       // на сервісі blog-service змінюємо значення змінної на вказане мною
-      this.blogDataService.setCurrentEditBlog(myBlog);
+      this.blogDataService.setCurrentEditBlog(
+        this.blogDataService.blogs[index]
+      );
 
       this.modalsService.openPostModal();
-    }
-    else {
-      alert("Ви не маєте права редагувати цей пост")
+    } else {
+      alert('Ви не маєте права редагувати цей пост');
     }
   }
 }

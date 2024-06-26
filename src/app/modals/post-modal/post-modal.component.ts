@@ -58,7 +58,6 @@ export class PostModalComponent implements OnInit {
       let currentIndex = this.blogDataService.currentEditBlog.id - 1;
       this.blogDataService.blogs[currentIndex].topic = this.title;
       this.blogDataService.blogs[currentIndex].message = this.postText;
-      console.log(this.blogDataService.blogs);
       this.modalService.closePostModal();
       
       this.title = '';

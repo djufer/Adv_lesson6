@@ -1,41 +1,23 @@
 app/
     components/
         header
-    pages/
-        main
     modals
-        
+        login-modal
+        login-modal
+        login-modal
+    pages/
+        post-list
     shared/
+        interfaces/
+            blogs
+            users
+        pipes/
+            date.pipe
+        services/
+            authorized-status.service
+            blog-data.service
+            modals.service
         styles/
             _variables.scss
-            _mixins.scss
-            _base.scss
-        interfaces/
-        pipes/
-        guards/
-        directives/
-        services/
 
-
-
-        app
-├── components
-│   ├── header
-│   ├── sidebar
-│   └── ...
-├── modals
-│   ├── login-modal
-│   │   ├── login-modal.component.ts
-│   │   ├── login-modal.component.html
-│   │   └── login-modal.component.css
-│   ├── register-modal
-│   │   ├── register-modal.component.ts
-│   │   ├── register-modal.component.html
-│   │   └── register-modal.component.css
-│   └── ...
-├── pages
-│   ├── home
-│   ├── about
-│   └── ...
-└── ...
         
